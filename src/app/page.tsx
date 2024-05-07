@@ -60,7 +60,7 @@ export default function Home() {
       }}>Signout</button>
       
       </div>
-      <div className="overflow-auto ">
+      <div className=" ">
         <div className="flex justify-between p-3">
           <div>Popular Topics 🔥</div>
           <div className=" flex gap-3">
@@ -69,20 +69,20 @@ export default function Home() {
 
           </div>
         </div>
-        <div className="flex gap-7">
+        <div className="flex lg:flex-row flex-col gap-7">
           {
             data.map((value:any,index:any)=>(
-              <div className="flex flex-col border rounded-3xl" key={index}>
-                <div className="flex p-5 h-3/6">
+              <div className="flex flex-col h-full border rounded-3xl" key={index}>
+                <div className="flex p-5 h-3/6 w-full">
                 <Image src={value.url} alt='' width={128} height={100}/>
                   <div>
                     <div>{value.title}</div>
-                    <p>{value.sub}</p>
+                    <p className="overflow-auto">{value.sub}</p>
 
                   </div>
                 </div>
-                <div className="p-5 h-3/6">
-                  <button className="p-10 text-center w-full border rounded-2xl "> READ</button>
+                <div className="p-5 h-3/6 w-full">
+                  <button className="p-10 text-center w-full border rounded-2xl  "> READ</button>
                 </div>
               </div>
             ))
